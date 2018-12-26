@@ -422,3 +422,8 @@ template {
       grid-column: 2; }
     .App .controls button {
       grid-column: 2; }
+  .App .error {
+    background-color: #fcc;
+    min-width: 50vw;
+    padding: 5px;
+    border: 1px solid #800; }
