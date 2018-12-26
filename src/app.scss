@@ -25,4 +25,11 @@
     input { grid-column: 2; }
     button { grid-column: 2; }
   }
+
+  .error {
+    background-color: #fcc;
+    min-width: 50vw;
+    padding: 5px;
+    border: 1px solid #800;
+  }
 }

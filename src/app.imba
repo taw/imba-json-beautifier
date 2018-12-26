@@ -5,17 +5,27 @@ tag App
     @maxlen = 80
     @indent = 2
     @text = JSON.stringify({hello: "world"})
+    @error = null
 
   def prettify
-    let json = JSON.parse(@text)
-    let spaces = Array.from({length: @indent+1}).join(" ")
-    @text = stringify(json, {maxLength: @maxlen, indent: spaces})
+    try
+      let json = JSON.parse(@text)
+      let spaces = Array.from({length: @indent+1}).join(" ")
+      @text = stringify(json, {maxLength: @maxlen, indent: spaces})
+    catch e
+      @error = e
+
+  def clear_error
+    @error = null
 
   def render
     <self>
       <header>
         "JSON Beautifier"
-      <textarea[@text] rows=10>
+      <textarea[@text] rows=10 :input.clear_error>
+      if @error
+        <div.error>
+          @error
       <div.controls>
         <label for="indent">
           "Indent"

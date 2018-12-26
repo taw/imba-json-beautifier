@@ -23,4 +23,16 @@ context("JSON Pretty Printing App", () => {
       .invoke("val")
       .should("eq", "[1, 2, 3, 4]")
   })
+
+  it("reports error if JSON is invalid, but clears if text changes", () => {
+    cy.get("textarea")
+      .clear()
+      .type("[1, 2, 3,")
+    cy.wait(100)
+    cy.get('.error').should('not.exist')
+    cy.get("button").click()
+    cy.get('.error').should('exist')
+    cy.get("textarea").type("4")
+    cy.get('.error').should('not.exist')
+  })
 })
