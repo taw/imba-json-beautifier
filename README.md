@@ -1,8 +1,6 @@
 # imba-json-beautifier
 
-JSON beautifier with Imba and SASS.
-
-Test with cypress.
+JSON beautifier with Imba and SASS. [You can see in in action here](https://taw.github.io/imba-json-beautifier).
 
 ## Install dependencies
 
@@ -22,7 +20,7 @@ npm run dev
 npm run build
 ```
 
-### Run tests interactively
+### Run Cypress tests interactively
 
 Start server then run:
 
