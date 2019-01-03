@@ -22,11 +22,12 @@ tag App
   def upload(event)
     let file = event.native:target:files[0]
     return unless file
-    let reader = FileReader.new()
+    let reader = FileReader.new
 
     reader:onload = do |event|
       @text = event:target:result
       @error = nil
+      Imba.commit
     reader.read-as-text(file)
 
   def render
