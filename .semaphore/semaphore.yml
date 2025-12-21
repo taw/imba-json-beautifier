@@ -2,7 +2,7 @@ version: v1.0
 name: Test MyApp
 agent:
   machine:
-    type: e1-standard-2
+    type: f1-standard-2
     os_image: ubuntu2404
 blocks:
   - name: Test
